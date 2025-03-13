@@ -25,23 +25,87 @@ A robust todo application built with Node.js, Express, and MongoDB. This project
    git clone https://github.com/morpole/yet-another-todo-app.git
    cd yet-another-todo-app
   
-## Install Dependencies
+## Install Dependencies:
 
 2. **Run**:
    ```bash
    npm install
-
-## Configure Environment
+   ```
+## Configure Environment:
 
 3. **Create a .env file in the root directory with your MongoDB Atlas URI**:
    ```bash
    MONGO_URI=your_mongodb_atlas_connection_string
    PORT=3000
+   ```
 Replace your_mongodb_atlas_connection_string with your actual MongoDB URI from Atlas.
 
 4. **Run the Application**:
    ```bash
    npm start
+   ```
 Open http://localhost:3000 in your browser to use the app.
+
+5. **Run Tests(Optional)**:
+   ```bash
+   npm test
+   ```
+
+## Usage
++ **Add a Task:**
+  + Enter a task description in the input field and click the "+" button.
+
++ **Edit a Task:**
+  + Click the edit icon (pencil) next to a task to open an edit form, update the description, and save.
+
++ **Delete a Task:**
+  + Click the delete icon (trash) next to a task to remove it.
+
++ **Mark as Complete:**
+  + Click the completion button (circle/check) to toggle task completion status.
+
++ **View Tasks:**
+  + The task list updates automatically after any action.
+
+## Code Explanation
++ **File: `server.js`**
+  + Initializes an Express app, sets up middleware (cors, bodyParser), and connects to MongoDB Atlas.
+  + Listens on PORT (default 3000).
+
++ **File: `routes/tasks.js`**
+  + Defines RESTful API endpoints for tasks:
+  
+   + `POST /tasks`: Creates a new task.
+
+   + `GET /tasks`: Retrieves all tasks.
+
+   + `GET /tasks/:id`: Gets a specific task.
+
+   + `PUT /tasks/:id`: Updates a task.
+
+   + `PATCH /tasks/:id`: Partially updates a task (e.g., completion status).
+
+   + `DELETE /tasks/:id`: Deletes a task.
+
++ **File: `models/task.js`**
+   + Defines a Mongoose schema for tasks with a description field and optional completed status.
+
++ **File: `public/index.html` and `main.js`**
+   + Renders the UI and handles frontend logic (e.g., form submission, task loading, event listeners for edit/delete).
+
++ **File: `test/unit/intro.test.js` and `tasks.test.js`**
+   + Contains unit tests for the task API using Vitest and mocking Mongoose models.
+
+## Learning Outcomes
+This project demonstrates:
++ Building a full-stack web application with Node.js and Express.
+
++ Integrating MongoDB Atlas for data persistence.
+
++ Creating a responsive frontend with HTML, Tailwind CSS, and JavaScript.
+
++ Implementing CRUD operations and real-time updates.
+
++ Writing and running unit tests with Vitest.
 
 
