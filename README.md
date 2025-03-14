@@ -38,13 +38,13 @@ A robust todo application built with Node.js, Express, and MongoDB. This project
    MONGO_URI=your_mongodb_atlas_connection_string
    PORT=3000
    ```
-   Replace your_mongodb_atlas_connection_string with your actual MongoDB URI from Atlas.
+   Replace `your_mongodb_atlas_connection_string` with your actual MongoDB URI from Atlas.
 
 4. **Run the Application**:
    ```bash
    npm start
    ```
-Open http://localhost:3000 in your browser to use the app.
+   Open http://localhost:3000 in your browser to use the app.
 
 5. **Run Tests(Optional)**:
    ```bash
